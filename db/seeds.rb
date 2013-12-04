@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+
+["iOS", "Android"].each do |platform|
+	Platform.create!(name: platform) unless Platform.find_by_name(platform)
+	puts "Platform: #{platform} added..."
+end
